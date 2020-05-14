@@ -1,0 +1,25 @@
+-var infolist = info
+div
+  li 지출내역
+  table.table.table-hover
+   thead
+     th(scope='cols' style="width:10%") 지출내역
+     th(scope='cols' style="width:10%") 지출금액
+     th(scope='cols' style="width:5%") 카테고리
+     th(scope='cols' style="width:15%") 날짜
+     th(scope='cols' style="width:3%") 결제
+     th(scope='cols' style="width:3%") 삭제
+   tbody
+     each info in infos
+       tr
+         td=info.expense
+         td=info.price
+         td=info.category
+         td=info.date
+         td=info.type
+         td
+            form(method="post" action="/expense/delete/"+info.num)
+                input(type="submit" value="삭제")
+
+
+         
